@@ -1,4 +1,4 @@
-# Terraform and Kubernetes deployment for EKS
+# Terragrunt and Kubernetes deployment for EKS
 This repository contains a Terraform module for creating an Amazon EKS cluster and IAM resources. It also includes instructions for deploying a Kubernetes pod that can access an S3 bucket using the IAM role created by Terraform.
 
 ## Prerequisites
