@@ -6,23 +6,34 @@ Before using this module, you will need to have the following:
 
 * An AWS account
 * AWS CLI installed and configured with appropriate permissions
-* Terraform installed on your local machine
+* Terragrunt installed on your local machine.
 
 ## Usage
 To use this module, follow these steps:
 
 1. Clone the Terraform repository
 
-2. Modify the variables in the terraform.tfvars file to match your specific environment, including the AWS region, VPC ID and Subnet IDs .
+2. Navigate to the directory containing the Terragrunt code.
+
+```
+cd terraform/environments/dev/eks
+```
 
 3. Run the following commands to create the EKS cluster and IAM resources:
 
+```
+terragrunt init
+terragrunt plan
+terragrunt apply
+```
+* Optional: The run-all command
+
+To be able to deploy multiple Terraform modules in a single command, use below commands.
 
 ```
-cd terraform
-terraform init
-terraform plan
-terraform apply
+cd terraform/environments/dev
+terragrunt run-all plan
+terragrunt run-all apply
 ```
 
 4. Create a Kubernetes deployment manifest that includes the `serviceAccountName` field with the name of the IAM role created in step 3 or use [deployment.yaml](./examples/deployment.yaml)
