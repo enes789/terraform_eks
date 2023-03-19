@@ -49,7 +49,7 @@ This command will create the infrastructure for the staging environment using th
 
 7. Repeat steps 5 and 6 for any additional environments.
 
-8. Create a Kubernetes deployment manifest that includes the `serviceAccountName` field with the name of the IAM role created in step 3 or use [deployment.yaml](./examples/deployment.yaml)
+8. Create a Kubernetes deployment manifest that includes the `serviceAccountName` field with the name of the IAM role created in step 4 or 6 or use [deployment.yaml](./examples/deployment.yaml)
 file (Make sure to change value of `eks.amazonaws.com/role-arn` annotation in ServiceAccount in this file).
 
 9. To deploy a pod that can access the S3 bucket, you will need to first authenticate with the EKS cluster. To do this, run the following command:
@@ -60,7 +60,7 @@ aws eks update-kubeconfig --name <EKS_CLUSTER_NAME> --region <AWS_REGION>
 
 This command will update your `kubeconfig` file with the credentials needed to access the EKS cluster. Make sure your user/role in `aws-auth` configmap
 
-10. Now that you are authenticated, you can deploy the Kubernetes pod by applying the deployment manifest that you created in step 4
+10. Now that you are authenticated, you can deploy the Kubernetes pod by applying the deployment manifest that you created in step 8
 
 ```
 kubectl apply -f deployment.yaml
