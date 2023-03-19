@@ -13,11 +13,11 @@ terraform {
     }
   }
 
-  backend "s3" {
-    bucket         = "terraform-states-759037523915-us-east-1"
-    key            = "terraform.tfstate"
-    dynamodb_table = "terraform-states-759037523915-us-east-1-lock"
-    region         = "us-east-1"
-  }
+  # backend "s3" {
+  #   bucket         = "terraform-states-759037523915-us-east-1"
+  #   key            = "terraform.tfstate"
+  #   dynamodb_table = "terraform-states-759037523915-us-east-1-lock"
+  #   region         = "us-east-1"
+  # }
 }
 
