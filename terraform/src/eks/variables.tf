@@ -1,8 +1,8 @@
-variable "environment" {
-  type        = string
-  description = "Name of the Environment (Stage-QA-Dev-Prod) being created"
-  default     = "dev"
-}
+# variable "environment" {
+#   type        = string
+#   description = "Name of the Environment (Stage-QA-Dev-Prod) being created"
+#   default     = "dev"
+# }
 
 variable "region" {
   type        = string

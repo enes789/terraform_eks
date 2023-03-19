@@ -2,7 +2,7 @@ module "eks" {
   source  = "terraform-aws-modules/eks/aws"
   version = "19.10.0"
 
-  cluster_name    = "${var.environment}-eks"
+  cluster_name    = "${terraform.workspace}-eks"
   cluster_version = var.cluster_version
 
   cluster_endpoint_public_access  = true
@@ -45,7 +45,7 @@ module "iam_policy" {
   source  = "terraform-aws-modules/iam/aws//modules/iam-policy"
   version = "5.13.0"
 
-  name        = "${var.environment}-s3-sa-policy"
+  name        = "${terraform.workspace}-s3-sa-policy"
   path        = "/"
   description = "Allow the Pods in EKS to read the S3 bucket"
 
@@ -74,7 +74,7 @@ module "iam_eks_role" {
   source  = "terraform-aws-modules/iam/aws//modules/iam-role-for-service-accounts-eks"
   version = "5.13.0"
 
-  role_name = "${var.environment}-eks-sa-role"
+  role_name = "${terraform.workspace}-eks-sa-role"
   role_policy_arns = {
     policy = "${module.iam_policy.arn}"
   }

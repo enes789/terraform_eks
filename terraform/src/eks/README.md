@@ -30,7 +30,6 @@ No resources.
 | <a name="input_aws_auth_roles"></a> [aws\_auth\_roles](#input\_aws\_auth\_roles) | List of role maps to add to the aws-auth configmap | `list(any)` | `[]` | no |
 | <a name="input_aws_auth_users"></a> [aws\_auth\_users](#input\_aws\_auth\_users) | List of user maps to add to the aws-auth configmap | `list(any)` | `[]` | no |
 | <a name="input_cluster_version"></a> [cluster\_version](#input\_cluster\_version) | Kubernetes `<major>.<minor>` version to use for the EKS cluster (i.e.: `1.22`) | `string` | `"1.25"` | no |
-| <a name="input_environment"></a> [environment](#input\_environment) | Name of the Environment (Stage-QA-Dev-Prod) being created | `string` | `"dev"` | no |
 | <a name="input_instance_types"></a> [instance\_types](#input\_instance\_types) | Instance types of the Node group | `list(string)` | <pre>[<br>  "t3.medium"<br>]</pre> | no |
 | <a name="input_manage_aws_auth_configmap"></a> [manage\_aws\_auth\_configmap](#input\_manage\_aws\_auth\_configmap) | Determines whether to manage the aws-auth configmap | `bool` | `false` | no |
 | <a name="input_namespace_service_accounts"></a> [namespace\_service\_accounts](#input\_namespace\_service\_accounts) | List of namespace:service account pairs | `list(any)` | <pre>[<br>  "default:app-sa"<br>]</pre> | no |

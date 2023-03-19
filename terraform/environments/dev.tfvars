@@ -1,4 +1,4 @@
-environment = "test"
+# environment = "dev"
 region      = "us-east-1"
 
 vpc_id     = "vpc-d962cca4"
@@ -8,5 +8,5 @@ manage_aws_auth_configmap = true
 
 tags = {
   "Provisoner"  = "Terraform"
-  "Environment" = "test"
+  "Environment" = "dev"
 }
