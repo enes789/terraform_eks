@@ -1,4 +1,4 @@
-# Deploying Infrastructure Across Multiple Environments with Terraform Workspaces and Kubernetes deployment for EKS
+# Terraform Workspaces and Kubernetes deployment for EKS
 This repository contains a Terraform module for creating an Amazon EKS cluster and IAM resources. It also includes instructions for deploying a Kubernetes pod that can access an S3 bucket using the IAM role created by Terraform.
 
 ## Prerequisites
@@ -39,13 +39,13 @@ This command will create the infrastructure for the dev environment using the va
 terraform workspace new prod
 ```
 
-6. Deploy the infrastructure for the staging environment.
+6. Deploy the infrastructure for the prod environment.
 
 ```
 terraform apply -var-file="../..environments/prod.tfvars"
 ```
 
-This command will create the infrastructure for the staging environment using the variables defined in the staging.tfvars file.
+This command will create the infrastructure for the prod environment using the variables defined in the prod.tfvars file.
 
 7. Repeat steps 5 and 6 for any additional environments.
 
