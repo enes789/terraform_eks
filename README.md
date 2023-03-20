@@ -47,7 +47,7 @@ aws eks update-kubeconfig --name <EKS_CLUSTER_NAME> --region <AWS_REGION>
 
 This command will update your `kubeconfig` file with the credentials needed to access the EKS cluster. Make sure your user/role in `aws-auth` configmap
 
-5. Now that you are authenticated, you can deploy the Kubernetes pod by applying the deployment manifest that you created in step 4
+6. Now that you are authenticated, you can deploy the Kubernetes pod by applying the deployment manifest that you created in step 4
 
 ```
 kubectl apply -f deployment.yaml
